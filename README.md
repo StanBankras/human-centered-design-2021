@@ -13,8 +13,12 @@ Als voorbereiding op de tweede test, ben ik van plan hetvolgende te doen:
 2. De beste ideeen uitwerken in code (simpel, maar werkend)
 3. Een goed plan maken voor tijdens de test, omdat dat de communicatie met Darice bevordert
 
-## 1. Schetsen van ideeen
+### 1. Schetsen van ideeen
+![v1](https://raw.githubusercontent.com/StanBankras/human-centered-design-2021/master/images/schetsen/week1/v1.jpg)
+![v2](https://raw.githubusercontent.com/StanBankras/human-centered-design-2021/master/images/schetsen/week1/v2.jpg)
+![v3](https://raw.githubusercontent.com/StanBankras/human-centered-design-2021/master/images/schetsen/week1/v3.jpg)
+![v4](https://raw.githubusercontent.com/StanBankras/human-centered-design-2021/master/images/schetsen/week1/v4.jpg)
 
-## 2. Beste ideeen uitwerken in code
+### 2. Beste ideeen uitwerken in code
 
-## 3. Test plan
+### 3. Test plan
