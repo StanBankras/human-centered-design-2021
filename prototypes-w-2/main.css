@@ -11,7 +11,7 @@ body {
 
 :root {
   --main: rgb(183, 255, 239);
-  --main-lighten: rgb(241, 241, 241);
+  --main-lighten: rgb(59, 228, 191);
   --main-darken: rgb(31, 31, 31);
 }
 
@@ -75,7 +75,7 @@ nav div div {
 button {
   padding: 0.5rem 1rem;
   margin-right: 1rem;
-  background-color: var(--main);
+  background-color: rgb(231, 231, 231);
   color: var(--main-darken);
   border: 1px solid var(--main-darken);
   cursor: pointer;
