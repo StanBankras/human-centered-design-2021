@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+:root {
+  --main: rgb(183, 255, 239);
+  --main-lighten: rgb(241, 241, 241);
+  --main-darken: rgb(31, 31, 31);
+}
+
+nav {
+  background-color: var(--main);
+  font-size: 15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+nav ul li a {
+  padding: 1rem;
+  display: block;
+  text-decoration: none;
+  background-color: var(--main);
+  color: var(--main-darken);
+  font-weight: bold;
+}
+
+nav ul li.active a,
+nav ul li:hover a {
+  background-color: var(--main-lighten);
+}
+
+nav > div {
+  background-color: var(--main-lighten);
+}
+
+nav div div {
+  max-width: 1400px;
+  padding: 0.7rem 2rem;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.example-1, .example-2, .example-3 {
+  overflow: hidden;
+  transition: .3s;
+}
+
+.hidden {
+  max-height: 0;
+}
+
+.buttons {
+  margin: 2rem 0;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  background-color: var(--main);
+  color: var(--main-darken);
+  border: 1px solid var(--main-darken);
+  cursor: pointer;
+}
+
+button.active {
+  background-color: var(--main-lighten);
+}
+
+.message {
+  padding: 1rem;
+  background-color: rgb(238, 238, 238);
+  max-width: 600px;
+  margin-bottom: 1rem;
+}
+
+.message .speaker {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 25px;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+p {
+  max-width: 600px;
+  line-height: 30px;
+}
+
+footer {
+  padding: 4rem;
+  background-color: var(--main-lighten);
+}
+
+footer div {
+  max-width: 1400px;
+  padding: 0 2rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+footer div a {
+  color: var(--main-darken);
+  font-weight: bold;
+  text-align: center;
+}

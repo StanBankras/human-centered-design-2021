@@ -1,0 +1,28 @@
+.example {
+  width: 800px;
+}
+
+.text {
+  padding: 2rem;
+}
+
+.time {
+  margin-bottom: 3rem;
+}
+
+.modes {
+  margin-bottom: 2rem;
+}
+
+.example.dark {
+  background-color: rgb(26, 26, 26);
+}
+
+.dark .time {
+  color: white;
+}
+
+.example.dark .message {
+  background-color: rgb(48, 48, 48);
+  color: rgb(184, 184, 184);
+}

@@ -1,0 +1,40 @@
+.example {
+  margin-top: 3rem;
+}
+
+.voice {
+  display: flex;
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: rgb(122, 187, 120);
+  max-width: 600px;
+  align-items: center;
+}
+
+.voice p {
+  margin-right: 2rem;
+  line-height: unset !important;
+  color: white;
+  font-weight: bold;
+}
+
+.speaker {
+  display: flex;
+  align-items: center;
+}
+
+.speaker span {
+  margin-right: 1rem;
+}
+
+.message.light {
+  background-color: rgb(233, 233, 233) !important;
+}
+
+.message.medium {
+  background-color: rgb(223, 223, 223) !important;
+}
+
+.message.loud {
+  background-color: rgb(201, 201, 201) !important;
+}

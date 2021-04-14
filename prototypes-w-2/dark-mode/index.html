@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark/light mode</title>
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <script defer src="./js/index.js"></script>
+</head>
+<body>
+  <nav id="nav">
+    <div><div>Podcast case</div></div>
+    <ul>
+      <li class="active">
+        <a href="../dark-mode">1. Dark mode</a>
+      </li>
+      <li>
+        <a href="../emotie/">2. Emotie</a>
+      </li>
+      <li>
+        <a href="../stem/">3. Type stem</a>
+      </li>
+    </ul>
+  </nav>
+  <main class="container">
+    <h1>Dark mode: zelf kiezen voor dark/light mode en/of gebaseerd op de tijd?</h1>
+    <p class="description">
+      Eerder gaf je al aan dat je de optie dark/light mode erg fijn vind.<br>
+      Hieronder staan 3 verschillende voorbeelden. <br>
+      Welke optie vind je beste manier om dark/light mode aan te bieden?
+    </p>
+    <div class="examples">
+      <div class="buttons">
+        <button class="button 1 active"><strong>Optie 1:</strong> Dark/lightmode op tijd</button>
+        <button class="button 2"><strong>Optie 2:</strong> Dark/lightmode zelf kiezen</button>
+        <button class="button 3"><strong>Optie 3:</strong> Beide</button>
+      </div>
+      <div class="example example-1">
+        <div class="text">
+          <p class="time"></p>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>In New York, like in lots of cities, you can call 3-1-1 for help with city services, but also for all kinds of other stuff. The most common calls they get are about landlords not heating apartments properly. But they'll also help you get hold of a W-2 form you need from 2009. They'll tell you what streets will be blocked off for a presidential visit, connect you with the gas company, and a stunning array of other things-- 55,000 calls a day.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Victoria Dusini</div>
+            <p>Actually, I had a call today.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>This is 311 operator Victoria Dusini.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>The woman said that her fiance died in their bed, and she was pregnant, and she wanted to identify his DNA in order to get social security benefits. So she wanted to know who to contact.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Angelique Pantoja</div>
+            <p>Well, a woman was cleaning her garage and she moved a box, and there was a crocodile. So I had to ask her, like a crocodile, like, big, with-- she's like, yeah, it's going snap, snap at me.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>She says that was an easy one, of course-- call Animal Care and Control. But she also helped with this call.</p>
+          </div>
+        </div>
+      </div>
+      <div class="example example-2 hidden">
+        <div class="text">
+          <div class="modes">
+            <button class="mode active" data-mode="light">
+              <span class="material-icons" data-mode="light">light_mode</span>
+            </button>
+            <button class="mode" data-mode="dark">
+              <span class="material-icons" data-mode="dark">dark_mode</span>
+            </button>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>In New York, like in lots of cities, you can call 3-1-1 for help with city services, but also for all kinds of other stuff. The most common calls they get are about landlords not heating apartments properly. But they'll also help you get hold of a W-2 form you need from 2009. They'll tell you what streets will be blocked off for a presidential visit, connect you with the gas company, and a stunning array of other things-- 55,000 calls a day.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Victoria Dusini</div>
+            <p>Actually, I had a call today.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>This is 311 operator Victoria Dusini.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>The woman said that her fiance died in their bed, and she was pregnant, and she wanted to identify his DNA in order to get social security benefits. So she wanted to know who to contact.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Angelique Pantoja</div>
+            <p>Well, a woman was cleaning her garage and she moved a box, and there was a crocodile. So I had to ask her, like a crocodile, like, big, with-- she's like, yeah, it's going snap, snap at me.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>She says that was an easy one, of course-- call Animal Care and Control. But she also helped with this call.</p>
+          </div>
+        </div>
+      </div>
+      <div class="example example-3 hidden">
+        <p>De kleur wordt bepaald aan het tijdstip, maar je kunt hem zelf nog aanpassen wanneer je dit wilt.</p>
+        <div class="text">
+          <p class="time"></p>
+          <div class="modes">
+            <button class="mode active" data-mode="light">
+              <span class="material-icons" data-mode="light">light_mode</span>
+            </button>
+            <button class="mode" data-mode="dark">
+              <span class="material-icons" data-mode="dark">dark_mode</span>
+            </button>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>In New York, like in lots of cities, you can call 3-1-1 for help with city services, but also for all kinds of other stuff. The most common calls they get are about landlords not heating apartments properly. But they'll also help you get hold of a W-2 form you need from 2009. They'll tell you what streets will be blocked off for a presidential visit, connect you with the gas company, and a stunning array of other things-- 55,000 calls a day.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Victoria Dusini</div>
+            <p>Actually, I had a call today.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>This is 311 operator Victoria Dusini.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>The woman said that her fiance died in their bed, and she was pregnant, and she wanted to identify his DNA in order to get social security benefits. So she wanted to know who to contact.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Angelique Pantoja</div>
+            <p>Well, a woman was cleaning her garage and she moved a box, and there was a crocodile. So I had to ask her, like a crocodile, like, big, with-- she's like, yeah, it's going snap, snap at me.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>She says that was an easy one, of course-- call Animal Care and Control. But she also helped with this call.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div>
+      <a href="#nav">Terug naar boven ^</a>
+    </div>
+  </footer>
+</body>
+</html>

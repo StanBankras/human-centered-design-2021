@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotie</title>
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <script defer src="./js/index.js"></script>
+</head>
+<body>
+  <nav id="nav">
+    <div><div>Podcast case</div></div>
+    <ul>
+      <li>
+        <a href="../dark-mode">1. Dark mode</a>
+      </li>
+      <li class="active">
+        <a href="../emotie/">2. Emotie</a>
+      </li>
+      <li>
+        <a href="../stem/">3. Type stem</a>
+      </li>
+    </ul>
+  </nav>
+  <main class="container">
+    <h1>Emotie: op welk niveau zichtbaar maken?</h1>
+    <p class="description">
+      Emotie kan met kleur aangegeven worden per woord, maar je zou ook de algemene emotie van een paragraaf kunnen tonen.
+      <br><br>
+      Hieronder drie voorbeelden van hoe deze opties eruitzien. Welke heeft jouw voorkeur? (of allebei niet?)
+    </p>
+    <div class="examples">
+      <div class="buttons">
+        <button class="button 1 active"><strong>Optie 1:</strong> Emotie per woord</button>
+        <button class="button 2"><strong>Optie 2:</strong> Emotie per zin</button>
+        <button class="button 3"><strong>Optie 3:</strong> Emotie per paragraaf</button>
+      </div>
+      <div class="example example-1">
+        <div class="text">
+          <div class="message">
+            <div class="speaker">Victoria Dusini</div>
+            <p>Actually, I had a call today.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>This is 311 operator Victoria Dusini.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>The woman said that her fiance <span class="sad">died</span> 😥  in their bed, and she was pregnant, and she wanted to identify his DNA in order to get social security benefits. So she wanted to know who to contact.</p>
+          </div>
+        </div>
+      </div>
+      <div class="example example-2 hidden">
+        <div class="text">
+          <div class="message">
+            <div class="speaker">Victoria Dusini</div>
+            <p>Actually, I had a call today.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>This is 311 operator Victoria Dusini.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p><span class="sad">The woman said that her fiance died in their bed</span> 😥, and she was pregnant, and she wanted to identify his DNA in order to get social security benefits. So she wanted to know who to contact.</p>
+          </div>
+        </div>
+      </div>
+      <div class="example example-3 hidden">
+        <div class="text">
+          <div class="message">
+            <div class="speaker">Victoria Dusini</div>
+            <p>Actually, I had a call today.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p>This is 311 operator Victoria Dusini.</p>
+          </div>
+          <div class="message">
+            <div class="speaker">Ira Glass</div>
+            <p><span class="sad">The woman said that her fiance died in their bed, and she was pregnant, and she wanted to identify his DNA in order to get social security benefits. So she wanted to know who to contact. 😥</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div>
+      <a href="#nav">Terug naar boven ^</a>
+    </div>
+  </footer>
+</body>
+</html>
