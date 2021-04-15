@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark/light mode</title>
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <script defer src="./js/drawaudio.js"></script>
+  <script defer src="./js/index.js"></script>
+</head>
+<body>
+  <nav id="nav">
+    <div><div>Podcast case</div></div>
+    <ul>
+      <li class="active">
+        <a href="../equalizer">Equalizer</a>
+      </li>
+    </ul>
+  </nav>
+  <main class="container">
+    <h1>Equalizer: frequenties visueel maken</h1>
+    <p class="description">
+      Vorige keer noemde je de equalizer om tonen te visualiseren. Je zei dat je hier het verschil tussen laag & hoog kunt onderscheiden.
+      <br><br>
+      Ik heb verschillende versies gemaakt waarbij de audio uit het gesprek gevisualiseerd wordt. 
+      <br><br>
+      Per optie zou ik graag willen weten:
+      <ul>
+        <li>
+          Zou je aan dit concept kunnen wennen? Waarom of waarom niet?
+        </li>
+        <li>
+          Stel, je zou dit langere tijd op deze manier lezen, denk je dat je dan meer mee krijgt van het gesprek?
+        </li>
+      </ul>
+    </p>
+    <div class="examples">
+      <div class="buttons">
+        <button class="button 1 active"><strong>Optie 1:</strong> Audio visueel met transcript meebewegen</button>
+      </div>
+      <div class="example example-1">
+        <audio controls>
+          <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/shoptalk-clip.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+        <div id="text"></div>
+        <div class="canvas">
+          <canvas id="canvas"></canvas>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div>
+      <a href="#nav">Terug naar boven ^</a>
+    </div>
+  </footer>
+</body>
+</html>
