@@ -1,165 +1,177 @@
-const audio = document.querySelector('audio');
-const text = document.querySelector('#text');
-const canvas = document.querySelector('canvas');
+import { EmojiButton } from './emoji.js'; 
+
+const emotionConfigEl = document.querySelector('.emotion');
 const container = document.querySelector('.example');
-const textContainer = document.querySelector('#text');
-const reader = document.querySelector('.canvas div');
-let currentText;
-let dragging = false;
-let customWidth;
-let currentSecond;
+const emotionsContainer = document.querySelector('.example .emotions');
+const addButton = document.querySelector('#add');
 
-const script = [
+const emotions = [
   {
-    start: 0,
-    end: 24,
-    text: 'Maybe like there\'s something about the aspect ratios on screensss, cause I feel like if you put a fixed position top bar, there\'s a certain people out there, I\'ve met them, that are like: I hate this. Like please don\'t chew into my screen realestate with your fixed topbar, but for some reason, you fix the sidebar and nobody cares you know, but maybe it chews up space that is not as useful, cause you have more horizontal space?'
+    emotion: 'Blij',
+    color: 'black',
+    enabled: false
   },
   {
-    start: 24,
-    end: 40,
-    text: 'Let\'s fi... eh.. I would be curious like... where this first showed up.. what.. cause, I mean, was it the iPad? I mean, remember when like Steve Jobs like rotated the iPad for the first time, then all of a sudden mail has a sidebar, or you know, Twitter, or.. like.'
+    emotion: 'Bedroefd',
+    color: 'black',
+    enabled: false
   },
   {
-    start: 40,
-    end: 45,
-    text: 'oh yeah, Twitter is like this now too I isn\'t it? Yeah.'
+    emotion: 'Bang',
+    color: 'black',
+    enabled: false
+  },
+  {
+    emotion: 'Boos',
+    color: 'black',
+    enabled: false
+  },
+  {
+    emotion: 'Geirriteerd',
+    color: 'black',
+    enabled: false
+  },
+  {
+    emotion: 'Verbaasd',
+    color: 'black',
+    enabled: false
+  },
+  {
+    emotion: 'Geschokt',
+    color: 'black',
+    enabled: false
   }
-]
+];
 
-drawAudio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/shoptalk-clip.mp3', 150, 2000);
+const exampleText = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s';
 
-for(let i = 0; i < 20; i++) {
-  const div = document.createElement('div');
-  div.classList.add(`sentence-${i}`);
-  div.style.position = 'absolute';
-  div.style.top = `${i * 33}px`;
-  div.style.height = '33px';
-  div.style.zIndex = -1;
-  textContainer.appendChild(div);
-}
-
-audio.addEventListener('play', e => {
-  playScript(e.target.currentTime);
+emotions.forEach(emotion => {
+  addTestButton(emotion.emotion);
+  appendEmotion(emotion)
 });
 
-audio.addEventListener('timeupdate', e => {
-  playScript(e.target.currentTime);
+addButton.addEventListener('click', () => {
+  const value = document.querySelector('#add-input').value;
+  if(!value || value === '') return;
+  addEmotion(value);
+  addTestButton(value);
 });
 
-reader.addEventListener('mousedown', e => {
-  dragging = true;
-});
+function toggleEmotion(emotion, e) {
+  const item = emotions.find(e => e.emotion === emotion);
+  item.enabled = !item.enabled;
 
-window.addEventListener('mousemove', e => {
-  if(dragging) {
-    const box = container.getBoundingClientRect();
-    reader.style.left = `${e.clientX - box.left}px`;
-    customWidth = e.clientX - box.left;
-    playScript();
-  }
-});
-
-window.addEventListener('mouseup', e => {
-  dragging = false;
-});
-
-function playScript(second) {
-  if(!second) {
-    if(currentSecond) second = currentSecond;
+  if(item.enabled) {
+    e.target.innerText = 'Zet uit';
+    e.target.parentElement.classList.add('active');
+    addColorPicker(e.target.parentElement, emotion);
+    addEmojiPicker(e.target.parentElement, emotion);
   } else {
-    currentSecond = second;
+    e.target.innerText = 'Zet aan';
+    e.target.parentElement.classList.remove('active');
+    removeColorPicker(e.target.parentElement);
+    removeEmojiPicker(emotion);
   }
-
-  const totalDuration = 45;
-  const text = script.find(s => s.start <= second && s.end >= second);
-  if(!text) return;
-  if(!currentText || JSON.stringify(currentText) !== JSON.stringify(text)) {
-    currentText = text;
-    appendWords(textContainer, text.text);
-    resetHighlighting();
-  }
-  const textProgress = (second - text.start) / (text.end - text.start) * 100;
-  const canvasWidth = canvas.width;
-  let containerWidth = container.getBoundingClientRect().width;
-  containerWidth = customWidth ? customWidth : containerWidth - containerWidth / 2;
-
-  drawTextProgress(textProgress, text.end - text.start);
-  canvas.style.transform = `translateX(${containerWidth - second / totalDuration * canvasWidth}px)`;
 }
 
-function appendWords(container, sentence) {
-  if(container.children && container.children.length > 0) {
-    const listArray = Array.from(container.children);
-    listArray.forEach(child => {
-      child.tagName === 'SPAN' ? child.remove() : ''
-    });
-  }
-
-  sentence.split(' ').forEach(word => {
-    const span = document.createElement('span');
-    span.innerText = word + ' ';
-    container.append(span);
-  });
-}
-
-function drawTextProgress(percentage, duration) {
-  const textBox = textContainer.getBoundingClientRect();
-  const lines = textBox.height / 33;
-  const children = Array.from(textContainer.children);
-  const spans = children.filter(child => child.tagName === 'SPAN');
-  const totalWords = spans.length;
-
-  const wordsPerLine = [];
-  spans.forEach(span => {
-    const box = span.getBoundingClientRect();
-    const offset = 33;
-    for(let i = 0; i < 100; i++) {
-      if(box.top - (20 + i * offset) < textBox.top) {
-        if(wordsPerLine[i]) {
-          wordsPerLine[i].push(span);
-          break;
-        } else {
-          wordsPerLine[i] = [span];
-          break;
-        }
-      }
+function addColorPicker(location, emotion) {
+  const div = document.createElement('div');
+  const text = document.createElement('p');
+  const colorPicker = document.createElement('input');
+  div.classList.add('color');
+  text.innerText = 'Welke kleur hoort bij \'' + emotion.toLowerCase() + '\'?';
+  colorPicker.type = 'color';
+  colorPicker.addEventListener('change', e => {
+    if(emotions.find(e => e.emotion === emotion).enabled) {
+      const emotionObj = emotions.find(e => e.emotion === emotion);
+      emotionObj.color = e.target.value;
+      const text = Array.from(location.children).find(c => c.localName === 'p');
+      text.style.color = e.target.value;
     }
   });
 
-  const wordIndex = Math.floor(totalWords * (percentage / 100))
+  div.appendChild(text);
+  div.appendChild(colorPicker);
 
-  wordsPerLine.forEach((line, i) => {
-    const sentence = document.querySelector(`.sentence-${i}`);
-    let wordsBefore = 0;
-    
-    for(let j = 0; j < i; j++) {
-      wordsBefore += wordsPerLine[j].length;
-    }
-    
-    if(wordIndex > line.length + wordsBefore) {
-      setHighlighting(sentence, textBox.width);
-    } else if(wordIndex < line.length + wordsBefore && wordIndex > wordsBefore) {
-      const index = wordIndex - wordsBefore;
-      const width = line[index].getBoundingClientRect().left - textBox.left;
-      setHighlighting(sentence, width);
-    } else {
-      setHighlighting(sentence, 0);
-    }
+  location.appendChild(div);
+}
+
+function removeColorPicker(location) {
+  const input = Array.from(location.children).find(c => c.classList.contains('color'));
+  const text = Array.from(location.children).find(c => c.localName === 'p');
+  text.style.color = 'black'; 
+  input.remove();
+}
+
+function addEmojiPicker(location, emotion) {
+  const div = document.createElement('div');
+  const text = document.createElement('p');
+  const button = document.createElement('button');
+  const buttonClass = `emoji-picker-${emotion.toLowerCase()}`;
+  div.classList.add('emoji-input');
+  text.innerText = 'Welke emoticon hoort bij \'' + emotion.toLowerCase() + '\'?';
+  button.innerText = 'Select Emoji';
+  button.classList.add(buttonClass);
+  button.classList.add('emoji-select');
+
+  div.appendChild(text);
+  div.appendChild(button);
+
+  location.appendChild(div);
+
+  const picker = new EmojiButton();
+  
+  picker.on('emoji', selection => {
+    const emotionObj = emotions.find(e => e.emotion === emotion);
+    emotionObj.emote = selection.emoji;
+    button.innerHTML = selection.emoji;
+    button.classList.add('selected');
   });
+  
+  button.addEventListener('click', () => picker.togglePicker(button));
 }
 
-function setHighlighting(el, width) {
-  el.style.backgroundColor = 'yellow';
-  el.style.opacity = 0.3;
-  el.style.width = `${width}px`;
+function removeEmojiPicker(emotion) {
+  const button = document.querySelector(`.${emotion.toLowerCase()} div.emoji-input`);
+  button.remove();
 }
 
-function resetHighlighting() {
-  for(let i = 0; i < 21; i++) {
-    const el = document.querySelector(`.sentence-${i}`);
-    if(el) {
-      el.style.width = 0;
-    }
-  }
+function addEmotion(emotion) {
+  const obj = {
+    emotion,
+    color: 'black',
+    enabled: false
+  };
+  emotions.push(obj);
+
+  appendEmotion(obj, true);
+}
+
+function appendEmotion(emotion, enabled) {
+  const el = document.createElement('div');
+  const wrapper = document.createElement('div');
+  const text = document.createElement('p');
+  const toggle = document.createElement('button');
+  el.classList.add('emotion');
+  el.classList.add(emotion.emotion.toLowerCase());
+  text.innerText = emotion.emotion;
+  toggle.addEventListener('click', e => toggleEmotion(emotion.emotion, e));
+  toggle.innerText = 'Zet aan';
+  wrapper.appendChild(text);
+  wrapper.appendChild(toggle);
+  el.appendChild(wrapper);
+  emotionsContainer.appendChild(el);
+}
+
+function addTestButton(emotion) {
+  const emotionObj = emotions.find(e => e.emotion === emotion);
+  const container = document.querySelector('#test-buttons');
+  const textSpace = document.querySelector('#example');
+  const button = document.createElement('button');
+  button.innerText = emotion;
+  button.addEventListener('click', () => {
+    textSpace.innerText = exampleText + ' ' + (emotionObj.emote ? emotionObj.emote : '');
+    textSpace.style.color = emotionObj.color;
+  });
+  container.appendChild(button);
 }

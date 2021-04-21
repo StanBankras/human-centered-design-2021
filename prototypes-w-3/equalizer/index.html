@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark/light mode</title>
+  <title>Equalizer</title>
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="./css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
@@ -28,15 +28,13 @@
     <p class="description">
       Vorige keer noemde je de equalizer om tonen te visualiseren. Je zei dat je hier het verschil tussen laag & hoog kunt onderscheiden.
       <br><br>
-      Ik heb verschillende versies gemaakt waarbij de audio uit het gesprek gevisualiseerd wordt. 
-      <br><br>
-      Per optie zou ik graag willen weten:
+      Ik heb een interactief prototype gemaakt die jou extra inzicht zou kunnen geven in hoe een gesprek loopt: waar vallen stiltes en wordt er enthousiast gepraat of niet?
       <ul>
         <li>
           Zou je aan dit concept kunnen wennen? Waarom of waarom niet?
         </li>
         <li>
-          Stel, je zou dit langere tijd op deze manier lezen, denk je dat je dan meer mee krijgt van het gesprek?
+          Als dit te ver voor je zou gaan, zie je manieren om hier een alternatief voor te vinden die wel zouden werken voor jou?
         </li>
       </ul>
     </p>
@@ -45,6 +43,12 @@
         <button class="button 1 active"><strong>Optie 1:</strong> Audio visueel met transcript meebewegen</button>
       </div>
       <div class="example example-1">
+        <form id="reinit">
+          <p>De audiogolven hieronder worden gegenereerd van het audio fragment. Hier kan een bepaald aantal 'golven' ingesteld worden. Probeer hier andere waardes in te vullen om dat te zien.</p>
+          <input type="number" id="waves" value="200">
+          <button type="submit">Genereer golven</button>
+        </form>
+        <p style="margin-top: 2rem; margin-bottom: 1rem;">Klik op de startknop van de audio om de podcast te starten. <strong>Let op: in een verder uitgewerkte versie zouden er natuurlijk namen bij de stukjes tekst komen!</strong></p>
         <audio controls>
           <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/shoptalk-clip.mp3" type="audio/mpeg">
         Your browser does not support the audio element.

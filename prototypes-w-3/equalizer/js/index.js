@@ -3,6 +3,8 @@ const text = document.querySelector('#text');
 const canvas = document.querySelector('canvas');
 const container = document.querySelector('.example');
 const textContainer = document.querySelector('#text');
+const reinitButton = document.querySelector('#reinit');
+const waveCount = document.querySelector('#waves');
 const reader = document.querySelector('.canvas div');
 let currentText;
 let dragging = false;
@@ -27,7 +29,13 @@ const script = [
   }
 ]
 
-drawAudio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/shoptalk-clip.mp3', 150, 2000);
+reinitButton.addEventListener('submit', e => {
+  e.preventDefault();
+  const waves = waveCount.value;
+  drawAudio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/shoptalk-clip.mp3', waves, 3000);
+});
+
+drawAudio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/shoptalk-clip.mp3', 1000, 4000);
 
 for(let i = 0; i < 20; i++) {
   const div = document.createElement('div');

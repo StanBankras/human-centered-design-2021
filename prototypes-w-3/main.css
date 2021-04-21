@@ -10,8 +10,8 @@ body {
 }
 
 :root {
-  --main: rgb(183, 255, 239);
-  --main-lighten: rgb(59, 228, 191);
+  --main: rgb(116, 207, 124);
+  --main-lighten: rgb(215, 255, 213);
   --main-darken: rgb(31, 31, 31);
 }
 

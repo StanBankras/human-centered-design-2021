@@ -1,36 +1,81 @@
-ul {
-  padding-left: 30px;
-  margin: 2rem 0;
+.emotions {
+  display:  grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: flex-start;
 }
 
-ul li {
-  line-height: 2rem;;
-}
-
-audio {
+.emotion {
+  display: flex;
+  align-items: center;
   margin-bottom: 2rem;
 }
 
-canvas {
-  transition: .3s ease-in;
-  position: relative;
+.emotion > * {
+  margin-right: 1rem;
 }
 
-.canvas {
-  position: relative;
+.emotion p {
+  font-weight: bold;
+  width: 100px;
 }
 
-.canvas div {
-  position: absolute;
-  left: calc(50% - 10px);
-  width: 20px;
-  height: 100%;
-  top: 0;
-  opacity: 0.3;
-  background-color: yellow;
+div > button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  background-color: var(--main);
+  color: black;
+  font-weight: bold;
 }
 
-#text {
-  line-height: 33px;
-  position: relative;
+.active > button {
+  background-color: var(--main-darken);
+  color: white
+}
+
+.emotion div {
+  display: grid;
+  gap: 1rem;
+}
+
+.emoji-select {
+  background-color: white !important;
+  border: 2px dashed black !important;
+}
+
+.emoji-select.selected {
+  font-size: 30px;
+}
+
+ul {
+  padding-left: 30px;
+  padding-top: 1rem;
+}
+
+.emoji-input { 
+  margin-top: 1rem;
+}
+
+.color, .emoji-input {
+  display: flex;
+}
+
+.color p, .emoji-input p {
+  width: unset;
+}
+
+#add {
+  margin-top: 2rem;
+  font-size: 15px;
+  background-color: white;
+  border: 2px dashed black;
+}
+
+#add:hover {
+  background-color: black;
+  color: white;
+}
+
+.questions li {
+  margin-bottom: 1rem;
 }

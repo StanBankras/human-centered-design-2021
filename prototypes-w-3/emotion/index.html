@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark/light mode</title>
+  <title>Emotie configureren</title>
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="./css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-  <script defer src="./js/drawaudio.js"></script>
-  <script defer src="./js/index.js"></script>
+  <script type="module" defer src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.0/dist/index.min.js"></script>
+  <script type="module" defer src="./js/index.js"></script>
 </head>
 <body>
   <nav id="nav">
@@ -33,9 +33,15 @@
       Stel jouw perfecte configuratie samen.
       <br><br>
       Vraag voor na de test:
-      <ul>
+      <ul class="questions">
         <li>
           Vind je het fijn om zelf te bepalen welke emoties je ziet en hoe je ze ziet?
+        </li>
+        <li>
+          Zijn er emoties die je niet per se wilt zien?
+        </li>
+        <li>
+          Zou je bij ieder transcript deze opties er graag bij hebben om soms te wisselen van emoticons?
         </li>
       </ul>
     </p>
@@ -44,7 +50,14 @@
         <button class="button 1 active"><strong>Optie 1:</strong> Emoties zelf configureren</button>
       </div>
       <div class="example example-1">
-        Configureren
+        <p style="margin-bottom: 1rem;">Kies welke emoties jij graag zou zien in transcripts (en voeg toe als je er een mist die er echt in zou moeten)</p>
+        <div class="emotions"></div>
+        <h3 style="margin-top: 2rem;margin-bottom: 2rem;">Voeg zelf nog een emotie toe die je belangrijk vind om in transcripts te kunnen onderscheiden:</h3>
+        <input style="display: block; padding: 0.5rem;margin-top: 1rem;" type="text" id="add-input" placeholder="Extra emotie...">
+        <button id="add">+ Voeg emotie toe</button>
+        <h3 style="margin-top: 2rem;margin-bottom: 2rem;">Voorbeeld in podcast transcript</h3>
+        <div id="test-buttons"></div>
+        <p style="margin-top: 2rem;" id="example"></p>
       </div>
     </div>
   </main>
