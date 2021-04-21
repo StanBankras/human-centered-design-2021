@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-bottom: 2rem;
+}
+
+ol {
+  padding-left: 30px;
+  list-style: decimal;
+  list-style-type: decimal;
+}
+
+ol li {
+  margin-bottom: 1.5rem;
+  font-size: 22px;
+}
+
+a {
+  color: rgb(255, 145, 0);
+}
+
+a:visited {
+  color: rgb(18, 133, 2);
+}
