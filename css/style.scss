@@ -163,8 +163,7 @@ main {
   transition: .3s;
   margin-bottom: 2rem;
   &:hover {
-    background-color: var(--main-color);
-    color: var(--text-contrast-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
   .top {
     display: grid;
@@ -183,6 +182,55 @@ main {
         margin-right: 1rem;
         letter-spacing: 0.5rem;
       }
+    }
+  }
+  .configure {
+    max-height: 0;
+    overflow-y: hidden;
+    transition: .3s;
+    > p {
+      font-size: 14px;
+      padding: 2rem 1rem 1rem 0.5rem;
+    }
+    div {
+      background-color: var(--bg-darken-1);
+      display: flex;
+      color: var(--text-color);
+      align-items: center;
+      button {
+        margin: 0.5rem 0.5rem 0.5rem 1rem;
+        padding: 0.5rem;
+        background-color: var(--bg-lighten);
+        height: 50px;
+        width: 50px;
+        font-size: 22px;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+      }
+      p {
+        text-transform: capitalize;
+        text-decoration: line-through;
+        user-select: none;
+        padding: 0.5rem;
+        width: 100%;
+        &:hover {
+          text-decoration: line-through !important;
+        }
+      }
+      &.active {
+        background-color: var(--bg-lighten);
+        p {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &.active {
+    .configure {
+      max-height: 1000px;
+      overflow-y: unset;
     }
   }
 }
