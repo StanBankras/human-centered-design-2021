@@ -118,8 +118,9 @@ main {
 }
 
 #content .wrapper {
-  max-width: 700px;
+  max-width: 760px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 #content h1 {
@@ -233,6 +234,19 @@ main {
   letter-spacing: 0.5rem;
 }
 
+@media (max-width: 767px) {
+  #emotion .top {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #emotion .top .emotions {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 1rem;
+  }
+}
+
 #emotion .configure {
   max-height: 0;
   overflow-y: hidden;
@@ -280,6 +294,7 @@ main {
           user-select: none;
   padding: 0.5rem;
   width: 100%;
+  cursor: pointer;
 }
 
 #emotion .configure div p:hover {
@@ -294,8 +309,20 @@ main {
   text-decoration: none;
 }
 
+#emotion.active {
+  cursor: unset;
+}
+
 #emotion.active .configure {
   max-height: 1000px;
   overflow-y: unset;
+}
+
+#emotion.active .top {
+  cursor: pointer;
+}
+
+#emotion.active .top:hover {
+  background-color: var(--bg-darken-1);
 }
 /*# sourceMappingURL=style.css.map */
