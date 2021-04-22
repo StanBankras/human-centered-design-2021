@@ -1,0 +1,185 @@
+@import url("main.css");
+:root {
+  --main-color: #4BB1FF;
+  --main-darken-1: #2C99EC;
+  --main-darken-2: #1883D5;
+  --information-bg: #373737;
+  --bg-color: #F8F8F8;
+  --bg-lighten: white;
+  --bg-darken-1: #F1F1F1;
+  --bg-darken-2: #DCDCDC;
+  --border-color: #707070;
+  --text-color: #717171;
+  --text-contrast-color: white;
+  --border-radius: 20px;
+}
+
+body {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.8rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: var(--main-color);
+  color: var(--text-contrast-color);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header button.mode {
+  background-color: var(--main-darken-1);
+  border: 1px solid var(--main-darken-2);
+  padding: 0.5rem 1rem;
+  color: var(--text-contrast-color);
+  font-weight: bold;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header button.mode span {
+  margin-right: 0.5rem;
+}
+
+header button.mode:hover {
+  background-color: var(--main-darken-2);
+}
+
+header h2 {
+  font-size: 1.2rem;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 100px;
+      grid-template-rows: 1fr 100px;
+  height: calc(100vh - 77px);
+}
+
+#content {
+  padding-top: 3rem;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+#content .wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#content h1 {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+#player {
+  background-color: var(--bg-darken-1);
+}
+
+#player .waves {
+  height: 60px;
+  background-color: var(--bg-lighten);
+}
+
+#player .audio {
+  height: 40px;
+}
+
+#info {
+  padding: 1.5rem;
+  background-color: var(--information-bg);
+  color: var(--text-contrast-color);
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+#info ul li {
+  margin-bottom: 0.5rem;
+}
+
+#info p {
+  max-height: 120px;
+}
+
+#info a {
+  position: absolute;
+  z-index: 100;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#info::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(5%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.89)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.89) 50%);
+}
+
+#emotion {
+  padding: 1.5rem;
+  background-color: var(--bg-lighten);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+  margin-bottom: 2rem;
+}
+
+#emotion:hover {
+  background-color: var(--main-color);
+  color: var(--text-contrast-color);
+}
+
+#emotion .top {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 300px;
+      grid-template-columns: 1fr 300px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#emotion .top p, #emotion .top h3 {
+  line-height: 22px;
+}
+
+#emotion .top .desc {
+  font-size: 13px;
+}
+
+#emotion .top .emotions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#emotion .top .emotions p {
+  margin-right: 1rem;
+  letter-spacing: 0.5rem;
+}
+/*# sourceMappingURL=style.css.map */
