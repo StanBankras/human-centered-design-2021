@@ -51,6 +51,7 @@ button.start {
   border-radius: 20px;
   border: none;
   cursor: pointer;
+  margin-bottom: 2rem;
 }
 
 button.start:hover {
@@ -106,8 +107,8 @@ header h2 {
 main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 100px;
-      grid-template-rows: 1fr 100px;
+  -ms-grid-rows: 1fr 150px;
+      grid-template-rows: 1fr 150px;
   height: calc(100vh - 77px);
 }
 
@@ -134,7 +135,7 @@ main {
 }
 
 #player .waves {
-  height: 60px;
+  height: 90px;
   background-color: var(--bg-lighten);
 }
 
@@ -324,5 +325,40 @@ main {
 
 #emotion.active .top:hover {
   background-color: var(--bg-darken-1);
+}
+
+canvas {
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
+  position: relative;
+}
+
+.canvas {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.canvas div {
+  position: absolute;
+  left: calc(50% - 10px);
+  width: 20px;
+  height: 100%;
+  top: 0;
+  opacity: 0.3;
+  background-color: yellow;
+}
+
+audio {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+#text {
+  position: relative;
+  margin-bottom: 2rem;
 }
 /*# sourceMappingURL=style.css.map */
