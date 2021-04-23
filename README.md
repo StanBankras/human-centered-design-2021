@@ -1,24 +1,20 @@
 # Human Centered Design @cmda-minor-web 2021
 
+Ik heb samengewerkt met Darice de Cuba. Darice is op latere leeftijd doof geworden en ervaart het lezen van podcasts niet altijd als prettig. Ze mist vaak de nuance van het gesprek. Aan mij de taak om dit voor haar te verbeteren.
+
 ## Inhoud
-* Testing & Prototyping week 1
+* [Probleem](https://github.com/StanBankras/human-centered-design-2021#probleem)
+* [User scenario](https://github.com/StanBankras/human-centered-design-2021#user-scenario)
+* [Tests](https://github.com/StanBankras/human-centered-design-2021#tests)
+* [Proces](https://github.com/StanBankras/human-centered-design-2021#proces)
+* [Uitwerking](https://github.com/StanBankras/human-centered-design-2021#uitwerking)
 
-## Testing & Prototyping week 1
-In de eerste week hebben we als team van 10 personen gezamenlijk prototypes gemaakt en getest met Darice. Mijn onderdeel van de test, mijn prototype, is [hier](#) te vinden.
+## Probleem
 
-De resultaten van de test zijn [hier](https://github.com/StanBankras/human-centered-design-2021/wiki/Test-verslag-1) terug te vinden.
+## User scenario
 
-Als voorbereiding op de tweede test, ben ik van plan hetvolgende te doen:
-1. Schetsen maken van een aantal ideeen die ik heb voor prototypes
-2. De beste ideeen uitwerken in code (simpel, maar werkend)
-3. Een goed plan maken voor tijdens de test, omdat dat de communicatie met Darice bevordert
+## Tests
 
-### 1. Schetsen van ideeen
-![v1](https://raw.githubusercontent.com/StanBankras/human-centered-design-2021/master/images/schetsen/week1/v1.jpg)
-![v2](https://raw.githubusercontent.com/StanBankras/human-centered-design-2021/master/images/schetsen/week1/v2.jpg)
-![v3](https://raw.githubusercontent.com/StanBankras/human-centered-design-2021/master/images/schetsen/week1/v3.jpg)
-![v4](https://raw.githubusercontent.com/StanBankras/human-centered-design-2021/master/images/schetsen/week1/v4.jpg)
+## Proces
 
-### 2. Beste ideeen uitwerken in code
-
-### 3. Test plan
+## Uitwerking
