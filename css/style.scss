@@ -287,3 +287,29 @@ audio {
   position: relative;
   margin-bottom: 2rem;
 }
+
+.text-wrapper {
+  margin-bottom: 2rem;
+  .person-tag {
+    padding: 0.5rem 1rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px 20px 0 0;
+  }
+  div.text {
+    padding: 1rem;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    .wrapper {
+      padding: 0 !important;
+    }
+    div {
+      transition: .4s;
+      z-index: -1;
+    }
+    span {
+      z-index: 5;
+    }
+  }
+}
