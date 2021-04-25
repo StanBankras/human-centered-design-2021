@@ -16,6 +16,10 @@
   --border-radius: 20px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-color);
   min-height: 100vh;
@@ -392,5 +396,9 @@ audio {
 
 .text-wrapper div.text span {
   z-index: 5;
+}
+
+.emoji {
+  margin-right: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

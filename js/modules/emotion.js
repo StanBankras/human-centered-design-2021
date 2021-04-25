@@ -1,6 +1,6 @@
 import { EmojiButton } from './emoji.js';
 
-let emotionConfiguration = {
+export let emotionConfiguration = {
   blij: {
     color: 'black',
     emote: '😀',
@@ -48,17 +48,25 @@ export function setConfigurationOptions() {
 
   Object.keys(emotionConfiguration).forEach(key => {
     const div = document.createElement('div');
+    const input = document.createElement('input');
     const button = document.createElement('button');
     const emotion = document.createElement('p');
 
     div.classList.add(key);
     div.classList.add('active');
 
+    input.type = 'color';
+    input.addEventListener('change', e => {
+      const color = e.target.value;
+      setEmotionColor(key, color);
+    })
+
     const picker = new EmojiButton();
     picker.on('emoji', selection => {
       emotionConfiguration[key].emote = selection.emoji;
       button.innerHTML = selection.emoji;
       setSelectedEmotions();
+      setEmojiInText(key, selection.emoji);
     });
     button.addEventListener('click', () => picker.togglePicker(button));
     button.innerText = emotionConfiguration[key].emote;
@@ -75,8 +83,19 @@ export function setConfigurationOptions() {
       setSelectedEmotions();
     });
 
+    div.appendChild(input);
     div.appendChild(button);
     div.appendChild(emotion);
     configContainer.appendChild(div);
   });
+}
+
+function setEmojiInText(emote, emoji) {
+  const items = document.querySelectorAll('.' + emote + '-emoji');
+  items.forEach(item => item.textContent = emoji);
+}
+
+function setEmotionColor(emote, color) {
+  const items = document.querySelectorAll('.' + emote);
+  items.forEach(item => item.style.color = color);
 }

@@ -1,12 +1,14 @@
 import { drawAudio } from './drawaudio.js';
+import { emotionConfiguration } from './emotion.js';
 
 const audio = document.querySelector('audio');
 const text = document.querySelector('#text');
 const canvas = document.querySelector('canvas');
 const container = document.querySelector('.canvas');
 const textContainer = document.querySelector('#text');
-const waveCount = document.querySelector('#waves');
+const content = document.querySelector('#content');
 const reader = document.querySelector('.canvas div');
+const startAudio = document.querySelector('button.start');
 
 const speakerColors = ['#2be4a0', '#2ba0e4', '#e4892b', '#b62be4', '#e42b2b'];
 const script = [
@@ -15,21 +17,38 @@ const script = [
     start: 0,
     end: 24,
     speaker: 'Person Name',
-    text: 'Maybe like there\'s something about the aspect ratios on screensss, cause I feel like if you put a fixed position top bar, there\'s a certain people out there, I\'ve met them, that are like: I hate this. Like please don\'t chew into my screen realestate with your fixed topbar, but for some reason, you fix the sidebar and nobody cares you know, but maybe it chews up space that is not as useful, cause you have more horizontal space?'
+    text: [
+      {
+        text: 'Maybe like there\'s something about the aspect ratios on screensss,', 
+        emotion: 'blij'
+      },
+      {
+        text: 'cause I feel like if you put a fixed position top bar, there\'s a certain people out there, I\'ve met them, that are like: I hate this. Like please don\'t chew into my screen realestate with your fixed topbar, but for some reason, you fix the sidebar and nobody cares you know, but maybe it chews up space that is not as useful, cause you have more horizontal space?'
+      }
+    ]
   },
   {
     id: 2,
     start: 24,
     end: 40,
     speaker: 'Person2 Name',
-    text: 'Let\'s fi... eh.. I would be curious like... where this first showed up.. what.. cause, I mean, was it the iPad? I mean, remember when like Steve Jobs like rotated the iPad for the first time, then all of a sudden mail has a sidebar, or you know, Twitter, or.. like.'
+    text: [
+      {
+        text: 'Let\'s fi... eh.. I would be curious like... where this first showed up.. what.. cause, I mean, was it the iPad? I mean, remember when like Steve Jobs like rotated the iPad for the first time, then all of a sudden mail has a sidebar, or you know, Twitter, or.. like.'
+      }
+    ]
   },
   {
     id: 3,
     start: 40,
     end: 45,
     speaker: 'Person Name',
-    text: 'oh yeah, Twitter is like this now too I isn\'t it? Yeah.'
+    text: [
+      {
+        text: 'oh yeah, Twitter is like this now too I isn\'t it? Yeah.',
+        emotion: 'boos'
+      }
+    ]
   }
 ]
 const speakerSet = script.reduce((acc, curr) => acc.add(curr.speaker), new Set([]));
@@ -40,8 +59,6 @@ const speakers = Array.from(speakerSet).map((speaker, i) => {
   }
 });
 
-
-let currentText;
 let dragging = false;
 let customWidth;
 let currentSecond;
@@ -70,6 +87,10 @@ window.addEventListener('mousemove', e => {
   }
 });
 
+startAudio.addEventListener('click', () => {
+  audio.play();
+})
+
 window.addEventListener('mouseup', e => {
   dragging = false;
 });
@@ -93,30 +114,38 @@ function playScript(second) {
   canvas.style.transform = `translateX(${containerWidth - second / totalDuration * canvasWidth}px)`;
 }
 
-function appendWords(container, sentence) {
-  if(container.children && container.children.length > 0) {
-    const listArray = Array.from(container.children);
-    listArray.forEach(child => {
-      child.tagName === 'SPAN' ? child.remove() : ''
-    });
-  }
-
-  sentence.split(' ').forEach(word => {
+function appendWords(container, sentence, emotion) {
+  const words = sentence.split(' ');
+  words.forEach((word, i) => {
     const span = document.createElement('span');
     span.innerText = word + ' ';
+    if(emotion) {
+      span.classList.add(emotion);
+      if(i === words.length - 1) {
+        const i = document.createElement('span');
+        i.textContent = emotionConfiguration[emotion].emote;
+        i.classList.add(emotion + '-emoji');
+        i.classList.add('emoji');
+        span.appendChild(i);
+      }
+    }
     container.append(span);
   });
 }
 
 function drawText() {
-  script.forEach(paragraph => {
+  script.forEach((paragraph, i) => {
     const container = document.createElement('div');
     container.classList.add('text-wrapper');
     container.classList.add(`section-${paragraph.id}`);
 
     const personTag = document.createElement('div')
     personTag.classList.add('person-tag');
-    personTag.innerText = paragraph.speaker;
+    if(script.slice(0, i).find(p => p.speaker === paragraph.speaker)) {
+      personTag.innerText = paragraph.speaker.split(" ").map((n)=>n[0]).join(".");;
+    } else {
+      personTag.innerText = paragraph.speaker;
+    }
     personTag.style.backgroundColor = speakers.find(s => s.speaker === paragraph.speaker).bgColor;
 
     const text = document.createElement('div');
@@ -124,7 +153,7 @@ function drawText() {
     text.classList.add('text');
     text.appendChild(textWrapper);
     textWrapper.classList.add('wrapper');
-    appendWords(textWrapper, paragraph.text);
+    paragraph.text.forEach(t => appendWords(textWrapper, t.text, t.emotion));
 
     container.appendChild(personTag);
     container.appendChild(text);
@@ -168,7 +197,13 @@ function drawTextProgress(percentage, scriptIndex) {
     }
   });
 
-  const wordIndex = Math.floor(totalWords * (percentage / 100))
+  const wordIndex = Math.floor(totalWords * (percentage / 100));
+  const textContainerTop = content.getBoundingClientRect().height - text.getBoundingClientRect().height;
+  const paddingTop = Array.from(text.children)
+    .slice(0, scriptIndex - 1)
+    .reduce((acc, curr) => acc + curr.getBoundingClientRect().height, 0);
+
+  content.scrollTop = textContainerTop + paddingTop + 100;
 
   wordsPerLine.forEach((line, i) => {
     const sentence = document.querySelector(`.sentence-${i}-${scriptIndex}`);
