@@ -63,7 +63,7 @@ let dragging = false;
 let customWidth;
 let currentSecond;
 
-drawAudio('../../assets/shoptalk-clip.mp3', 500, 4000);
+drawAudio('assets/shoptalk-clip.mp3', 500, 4000);
 drawText();
 
 audio.addEventListener('play', e => {
