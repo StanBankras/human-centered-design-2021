@@ -11,46 +11,17 @@ const reader = document.querySelector('.canvas div');
 const startAudio = document.querySelector('button.start');
 
 const speakerColors = ['#2be4a0', '#2ba0e4', '#e4892b', '#b62be4', '#e42b2b'];
-const script = [
-  {
-    id: 1,
-    start: 0,
-    end: 24,
-    speaker: 'Person Name',
-    text: [
-      {
-        text: 'Maybe like there\'s something about the aspect ratios on screensss,', 
-        emotion: 'blij'
-      },
-      {
-        text: 'cause I feel like if you put a fixed position top bar, there\'s a certain people out there, I\'ve met them, that are like: I hate this. Like please don\'t chew into my screen realestate with your fixed topbar, but for some reason, you fix the sidebar and nobody cares you know, but maybe it chews up space that is not as useful, cause you have more horizontal space?'
-      }
-    ]
-  },
-  {
-    id: 2,
-    start: 24,
-    end: 40,
-    speaker: 'Person2 Name',
-    text: [
-      {
-        text: 'Let\'s fi... eh.. I would be curious like... where this first showed up.. what.. cause, I mean, was it the iPad? I mean, remember when like Steve Jobs like rotated the iPad for the first time, then all of a sudden mail has a sidebar, or you know, Twitter, or.. like.'
-      }
-    ]
-  },
-  {
-    id: 3,
-    start: 40,
-    end: 45,
-    speaker: 'Person Name',
-    text: [
-      {
-        text: 'oh yeah, Twitter is like this now too I isn\'t it? Yeah.',
-        emotion: 'boos'
-      }
-    ]
-  }
-]
+let script = [];
+
+fetch('assets/script.json')
+  .then(res => res.json())
+  .then(data => {
+    script = data;
+    console.log(data);
+    drawAudio('assets/audio.mp3', 500, 4000);
+    drawText();
+  });
+
 const speakerSet = script.reduce((acc, curr) => acc.add(curr.speaker), new Set([]));
 const speakers = Array.from(speakerSet).map((speaker, i) => {
   return {
@@ -62,9 +33,6 @@ const speakers = Array.from(speakerSet).map((speaker, i) => {
 let dragging = false;
 let customWidth;
 let currentSecond;
-
-drawAudio('assets/shoptalk-clip.mp3', 500, 4000);
-drawText();
 
 audio.addEventListener('play', e => {
   playScript(e.target.currentTime);
