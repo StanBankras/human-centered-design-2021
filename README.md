@@ -43,6 +43,7 @@ Uiteindelijk heb ik hierdoor genoeg informatie verzamelt om tot een concept te k
 
 ## Uitwerking
 [Waarom werkt mijn concept voor Darice?](https://github.com/StanBankras/human-centered-design-2021/wiki/Waarom-werkt-dit-concept-voor-Darice%3F)
+
 [Conclusies uit tests die bijdragen aan het ontwerp](https://github.com/StanBankras/human-centered-design-2021/wiki/Eindconclusies)
 
 ### [Live link](https://stanbankras.github.io/human-centered-design-2021/)
