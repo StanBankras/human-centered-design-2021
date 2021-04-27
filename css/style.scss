@@ -337,3 +337,13 @@ audio {
 .emoji {
   margin-right: 1rem;
 }
+
+.dark {
+  .text-wrapper .text {
+    background-color: #4f4f4f !important;
+    color: #bcbcbc;
+  }
+  audio::-webkit-media-controls-panel {
+    background-color: rgb(83, 83, 83);
+  }
+}

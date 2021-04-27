@@ -423,4 +423,13 @@ audio {
 .emoji {
   margin-right: 1rem;
 }
+
+.dark .text-wrapper .text {
+  background-color: #4f4f4f !important;
+  color: #bcbcbc;
+}
+
+.dark audio::-webkit-media-controls-panel {
+  background-color: #535353;
+}
 /*# sourceMappingURL=style.css.map */
