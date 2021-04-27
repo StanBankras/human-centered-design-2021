@@ -45,7 +45,18 @@ export let emotionConfiguration = {
 
 export function setSelectedEmotions() {
   const pEl = document.querySelector('#emotion .emotions p');
-  pEl.innerText = Object.values(emotionConfiguration).reduce((acc, curr) => curr.active ? acc + curr.emote : acc, '');
+  pEl.innerText = Object.values(emotionConfiguration).reduce((acc, curr) => {
+    const key = Object.keys(emotionConfiguration).find(key => emotionConfiguration[key].emote === curr.emote);
+    if(curr.active) {
+      setEmotionColor(key, curr.color)
+      setEmojiInText(key, curr.emote);
+      return acc + curr.emote;
+    } else { 
+      setEmotionColor(key, 'black')
+      setEmojiInText(key, '');
+      return acc;
+    }
+  }, '');
 }
 
 export function setConfigurationOptions() {

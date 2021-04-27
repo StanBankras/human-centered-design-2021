@@ -92,6 +92,7 @@ main {
   display: grid;
   grid-template-rows: 1fr 150px;
   height: calc(100vh - 77px);
+  max-width: 100%;
 }
 
 #content {
@@ -112,6 +113,7 @@ main {
 
 #player {
   background-color: var(--bg-darken-1);
+  max-width: 100vw;
   .waves {
     height: 90px;
     background-color: var(--bg-lighten);

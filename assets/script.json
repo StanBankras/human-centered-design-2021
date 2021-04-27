@@ -270,7 +270,11 @@
         "text": " Nee, messenmagneetstreep ophangen."
       },
       {
-        "text": "Alleen op de plek, de enige plek waar het kan, is het een beetje lastig boren, of in ieder geval, ik durf dat niet zomaar zonder dat met de huisbaas eventjes te overleggen,"
+        "text": "Alleen op de plek, de enige plek waar het kan, is het een beetje lastig boren, of in ieder geval,"
+      },
+      {
+        "text": "ik durf dat niet zomaar zonder dat met de huisbaas eventjes te overleggen,",
+        "emotion": "bang"
       },
       {
         "text": "want er zit - weet ik veel - plastic of…. geen idee, er zit iets."
@@ -304,7 +308,8 @@
         "text": "waarvoor ga je het gebruiken?"
       },
       {
-        "text": "Dus ik uitleggen, ik zei: ja, nou ja, en ik wil dus liever niet boren."
+        "text": "Dus ik uitleggen, ik zei: ja, nou ja, en ik wil dus liever niet boren.",
+        "emotion": "lachen"
       }
     ]
   },
@@ -318,7 +323,8 @@
         "text": "En toen zei hij:"
       },
       {
-        "text": "Ooo, dat is echt zo’n vrouwending. Ik zou daar echt helemaaaaal niet, dat zou me echt helemaaaaal niks kunnen schelen wat de huisbaas zou vinden."
+        "text": "Ooo, dat is echt zo’n vrouwending. Ik zou daar echt helemaaaaal niet, dat zou me echt helemaaaaal niks kunnen schelen wat de huisbaas zou vinden.",
+        "emotion": "verbaasd"
       },
       {
         "text": "En ik weet wel dat ik het…"
