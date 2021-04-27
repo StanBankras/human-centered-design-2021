@@ -375,6 +375,26 @@ audio {
   color: white;
   font-weight: bold;
   border-radius: 20px 20px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.text-wrapper .person-tag div {
+  font-weight: normal;
+}
+
+.text-wrapper .person-tag div button {
+  margin-left: 1rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
 }
 
 .text-wrapper div.text {

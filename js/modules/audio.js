@@ -102,20 +102,39 @@ function appendWords(container, sentence, emotion) {
   });
 }
 
+function getFormattedMinutes(seconds) {
+  const date = new Date(null);
+  date.setSeconds(seconds);
+  return date.toISOString().substr(14, 5);
+}
+
 function drawText() {
   script.forEach((paragraph, i) => {
     const container = document.createElement('div');
     container.classList.add('text-wrapper');
     container.classList.add(`section-${paragraph.id}`);
 
-    const personTag = document.createElement('div')
+    const personTag = document.createElement('div');
     personTag.classList.add('person-tag');
     if(script.slice(0, i).find(p => p.speaker === paragraph.speaker)) {
-      personTag.innerText = paragraph.speaker.split(" ").map((n)=>n[0] + n[1]).join(". ");;
+      personTag.innerText = paragraph.speaker.split(" ").map((n)=>n[0] + n[1]).join(". ");
     } else {
       personTag.innerText = paragraph.speaker;
     }
     personTag.style.backgroundColor = speakers.find(s => s.speaker === paragraph.speaker).bgColor;
+
+    const skipBtn = document.createElement('button');
+    skipBtn.textContent = 'Skip >';
+    skipBtn.addEventListener('click', () => {
+      console.log(audio.currentTime = script[i + 1] ? script[i + 1].start : audio.currentTime);
+    });
+    const time = document.createElement('div');
+    const startTime = getFormattedMinutes(paragraph.start);
+    const endTime = getFormattedMinutes(paragraph.end);
+    time.textContent = `${startTime} - ${endTime}`;
+
+    time.appendChild(skipBtn);
+    personTag.appendChild(time);
 
     const text = document.createElement('div');
     const textWrapper = document.createElement('div');

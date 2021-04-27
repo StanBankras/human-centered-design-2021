@@ -95,7 +95,10 @@
     "speaker": "Marie Lotte",
     "text": [
       {
-        "text": "Ze is schrijver voor oa &C en OneWorld, maar ze poepte er recent ook een heel boek uit, getiteld ‘Je kunt het ook nooit goed doen’ - over alle vermoeiende shit waar je als dertiger geheid tegenaan loopt."
+        "text": "Ze is schrijver voor oa &C en OneWorld, maar ze poepte er recent ook een heel boek uit,"
+      },
+      {
+        "text": "getiteld ‘Je kunt het ook nooit goed doen’ - over alle vermoeiende shit waar je als dertiger geheid tegenaan loopt."
       }
     ]
   },
@@ -120,7 +123,8 @@
     "speaker": "Carmen",
     "text": [
       {
-        "text": "Dankjewel *lacht* hoi!"
+        "text": "Dankjewel *lacht* hoi!",
+        "emotion": "lachen"
       }
     ]
   },
@@ -142,7 +146,8 @@
     "speaker": "Carmen",
     "text": [
       {
-        "text": "Ja, heftig! De druk is wel hoog! *lacht*"
+        "text": "Ja, heftig! De druk is wel hoog! *lacht*",
+        "emotion": "lachen"
       }
     ]
   },
@@ -159,7 +164,8 @@
         "text": "* Marie Lotte praat erdoorheen: * 'iets heel radicaals!..'"
       },
       {
-        "text": "En dan zijn wij helemaal blij!"
+        "text": "En dan zijn wij helemaal blij!",
+        "emotion": "blij"
       }
     ]
   },
@@ -203,7 +209,8 @@
     "speaker": "Nydia",
     "text": [
       {
-        "text": "Een messenblok ophangen?"
+        "text": "Een messenblok ophangen?",
+        "emotion": "verbaasd"
       }
     ]
   },
@@ -225,7 +232,7 @@
     "speaker": "Marie Lotte",
     "text": [
       {
-        "text": " ja, dat is zo’n magneetstrip doen en die kan dan je messen dragen -- Nydia:  O, zo’n strip, jajajaja, dat ken ik"
+        "text": "ja, dat is zo’n magneetstrip doen en die kan dan je messen dragen -- Nydia:  O, zo’n strip, jajajaja, dat ken ik"
       }
     ]
   },
@@ -236,7 +243,8 @@
     "speaker": "Marie Lotte",
     "text": [
       {
-        "text": "Oja, voor mij was het echt eye-opening, vond het heerlijk"
+        "text": "Oja, voor mij was het echt eye-opening, vond het heerlijk",
+        "emotion": "blij"
       }
     ]
   },
@@ -247,7 +255,8 @@
     "speaker": "Nydia",
     "text": [
       {
-        "text": "Ik dacht een messenblok, en dat dan ophangen"
+        "text": "Ik dacht een messenblok, en dat dan ophangen",
+        "emotion": "verbaasd"
       }
     ]
   },
@@ -258,7 +267,13 @@
     "speaker": "Marie Lotte",
     "text": [
       {
-        "text": " Nee, messenmagneetstreep ophangen. Alleen op de plek, de enige plek waar het kan, is het een beetje lastig boren, of in ieder geval, ik durf dat niet zomaar zonder dat met de huisbaas eventjes te overleggen, want er zit - weet ik veel - plastic of…. geen idee, er zit iets."
+        "text": " Nee, messenmagneetstreep ophangen."
+      },
+      {
+        "text": "Alleen op de plek, de enige plek waar het kan, is het een beetje lastig boren, of in ieder geval, ik durf dat niet zomaar zonder dat met de huisbaas eventjes te overleggen,"
+      },
+      {
+        "text": "want er zit - weet ik veel - plastic of…. geen idee, er zit iets."
       }
     ]
   },
@@ -269,7 +284,10 @@
     "speaker": "Marie Lotte",
     "text": [
       {
-        "text": "Dus toen kwam iemand met de geniale optie van: probeer het anders eerst eens met dubbelzijdig tape, want er bestaat tape wat echt tot honderd kilo, eh, kan houden."
+        "text": "Dus toen kwam iemand met de geniale optie van:"
+      },
+      {
+        "text": "probeer het anders eerst eens met dubbelzijdig tape, want er bestaat tape wat echt tot honderd kilo, eh, kan houden."
       }
     ]
   },
@@ -280,7 +298,13 @@
     "speaker": "Marie Lotte",
     "text": [
       {
-        "text": "Dus ik naar de bouwmarkt, op zoek naar dat tape, en toen vroeg de jongen die mij hielp: waarvoor ga je het gebruiken? Dus ik uitleggen, ik zei: ja, nou ja, en ik wil dus liever niet boren."
+        "text": "Dus ik naar de bouwmarkt, op zoek naar dat tape, en toen vroeg de jongen die mij hielp:"
+      },
+      {
+        "text": "waarvoor ga je het gebruiken?"
+      },
+      {
+        "text": "Dus ik uitleggen, ik zei: ja, nou ja, en ik wil dus liever niet boren."
       }
     ]
   },
@@ -291,7 +315,13 @@
     "speaker": "Marie Lotte",
     "text": [
       {
-        "text": "En toen zei hij: Ooo, dat is echt zo’n vrouwending. Ik zou daar echt helemaaaaal niet, dat zou me echt helemaaaaal niks kunnen schelen wat de huisbaas zou vinden. En ik weet wel dat ik het…"
+        "text": "En toen zei hij:"
+      },
+      {
+        "text": "Ooo, dat is echt zo’n vrouwending. Ik zou daar echt helemaaaaal niet, dat zou me echt helemaaaaal niks kunnen schelen wat de huisbaas zou vinden."
+      },
+      {
+        "text": "En ik weet wel dat ik het…"
       }
     ]
   }
