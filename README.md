@@ -2,6 +2,8 @@
 
 Ik heb samengewerkt met Darice de Cuba. Darice is op latere leeftijd doof geworden en ervaart het lezen van podcasts niet altijd als prettig. Ze mist vaak de nuance van het gesprek. Aan mij de taak om dit voor haar te verbeteren.
 
+![product](https://github.com/StanBankras/human-centered-design-2021/blob/master/images/product.gif?raw=true)
+
 ## Inhoud
 * [Probleem](https://github.com/StanBankras/human-centered-design-2021#probleem)
 * [User scenario](https://github.com/StanBankras/human-centered-design-2021#user-scenario)
