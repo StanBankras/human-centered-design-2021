@@ -13,22 +13,23 @@ const startAudio = document.querySelector('button.start');
 const speakerColors = ['#2be4a0', '#2ba0e4', '#e4892b', '#b62be4', '#e42b2b'];
 let script = [];
 
+let speakerSet;
+let speakers;
+
 fetch('assets/script.json')
   .then(res => res.json())
   .then(data => {
     script = data;
-    console.log(data);
+    speakerSet = script.reduce((acc, curr) => acc.add(curr.speaker), new Set([]));
+    speakers = Array.from(speakerSet).map((speaker, i) => {
+      return {
+        speaker,
+        bgColor: speakerColors[i]
+      }
+    });
     drawAudio('assets/audio.mp3', 500, 4000);
     drawText();
   });
-
-const speakerSet = script.reduce((acc, curr) => acc.add(curr.speaker), new Set([]));
-const speakers = Array.from(speakerSet).map((speaker, i) => {
-  return {
-    speaker,
-    bgColor: speakerColors[i]
-  }
-});
 
 let dragging = false;
 let customWidth;
