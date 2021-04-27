@@ -210,8 +210,8 @@ main {
 #emotion .top {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 300px;
-      grid-template-columns: 1fr 300px;
+  -ms-grid-columns: 1fr 350px;
+      grid-template-columns: 1fr 350px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

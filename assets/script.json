@@ -6,7 +6,292 @@
     "speaker": "Intro tune",
     "text": [
       {
-        "text": "* Onzinnige intro tune van Paul de Leeuw*"
+        "text": "* Onzinnige intro tune van Paul de Leeuw *",
+        "emotion": "lachen"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "start": 30,
+    "end": 36,
+    "speaker": "Nydia",
+    "text": [
+      {
+        "text": "Schavuiten, snottebellen, kwamensen en nietsnutten, welkom bij DAMN, HONEY"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "start": 36,
+    "end": 42,
+    "speaker": "DAMN HONEY intro jingle",
+    "text": [
+      {
+        "text": "* Vrolijke intro muziek *"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "start": 42,
+    "end": 45,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": "De podcast over shit waar je als vrouw van deze tijd mee moet dealen"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "start": 45,
+    "end": 46,
+    "speaker": "Nydia",
+    "text": [
+      {
+        "text": "Mijn naam is Nydia"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "start": 46,
+    "end": 47,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": "En ik ben Marie Lotte"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "start": 47,
+    "end": 54,
+    "speaker": "Nydia",
+    "text": [
+      {
+        "text": "Je luistert naar aflevering 43. En ja hoor, ook deze aflevering nemen we weer op vanuit onze eigen huissies"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "start": 55,
+    "end": 63,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": "Jup, en aan onze digitale tafel is aangeschoven Carmen Felix, ook wel op de Twits bekend als: Carmen Felix van Hollandia"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "start": 63,
+    "end": 73,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": "Ze is schrijver voor oa &C en OneWorld, maar ze poepte er recent ook een heel boek uit, getiteld ‘Je kunt het ook nooit goed doen’ - over alle vermoeiende shit waar je als dertiger geheid tegenaan loopt."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "start": 74,
+    "end": 81,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": "Omdat ze gewoonweg - en ik citeer - ‘te veel relevante ergernissen heeft om die niet op papier te zetten’."
+      },
+      {
+        "text": "Welkom, Carmen!"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "start": 81,
+    "end": 83,
+    "speaker": "Carmen",
+    "text": [
+      {
+        "text": "Dankjewel *lacht* hoi!"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "start": 84,
+    "end": 86,
+    "speaker": "Nydia",
+    "text": [
+      {
+        "text": "We kunnen niet wachten op al je ongezouten meningen"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "start": 86,
+    "end": 88,
+    "speaker": "Carmen",
+    "text": [
+      {
+        "text": "Ja, heftig! De druk is wel hoog! *lacht*"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "start": 88,
+    "end": 93,
+    "speaker": "Nydia",
+    "text": [
+      {
+        "text": "Ja, gooi… gooi gewoon af en toe iets heel, heel gemeens eruit."
+      },
+      {
+        "text": "* Marie Lotte praat erdoorheen: * 'iets heel radicaals!..'"
+      },
+      {
+        "text": "En dan zijn wij helemaal blij!"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "start": 93,
+    "end": 94,
+    "speaker": "Carmen",
+    "text": [
+      {
+        "text": "Oke, ga ik doen"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "start": 94,
+    "end": 98,
+    "speaker": "Nydia",
+    "text": [
+      {
+        "text": "Ehm, laten we even beginnen met het minst feministische. Marie Lot!"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "start": 99,
+    "end": 106,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": "Ja, ik was in een bouwmarkt, want ik wilde iets ophangen, namelijk een messenblok. Ehm, we hebben…"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "start": 106,
+    "end": 107,
+    "speaker": "Nydia",
+    "text": [
+      {
+        "text": "Een messenblok ophangen?"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "start": 107,
+    "end": 108,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": "Ja, je kan zo’n ehm, zo’n ehhh,"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "start": 109,
+    "end": 112,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": " ja, dat is zo’n magneetstrip doen en die kan dan je messen dragen -- Nydia:  O, zo’n strip, jajajaja, dat ken ik"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "start": 112,
+    "end": 115,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": "Oja, voor mij was het echt eye-opening, vond het heerlijk"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "start": 115,
+    "end": 117,
+    "speaker": "Nydia",
+    "text": [
+      {
+        "text": "Ik dacht een messenblok, en dat dan ophangen"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "start": 117,
+    "end": 131,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": " Nee, messenmagneetstreep ophangen. Alleen op de plek, de enige plek waar het kan, is het een beetje lastig boren, of in ieder geval, ik durf dat niet zomaar zonder dat met de huisbaas eventjes te overleggen, want er zit - weet ik veel - plastic of…. geen idee, er zit iets."
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "start": 131,
+    "end": 143,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": "Dus toen kwam iemand met de geniale optie van: probeer het anders eerst eens met dubbelzijdig tape, want er bestaat tape wat echt tot honderd kilo, eh, kan houden."
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "start": 143,
+    "end": 154,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": "Dus ik naar de bouwmarkt, op zoek naar dat tape, en toen vroeg de jongen die mij hielp: waarvoor ga je het gebruiken? Dus ik uitleggen, ik zei: ja, nou ja, en ik wil dus liever niet boren."
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "start": 154.5,
+    "end": 161,
+    "speaker": "Marie Lotte",
+    "text": [
+      {
+        "text": "En toen zei hij: Ooo, dat is echt zo’n vrouwending. Ik zou daar echt helemaaaaal niet, dat zou me echt helemaaaaal niks kunnen schelen wat de huisbaas zou vinden. En ik weet wel dat ik het…"
       }
     ]
   }

@@ -27,7 +27,7 @@ fetch('assets/script.json')
         bgColor: speakerColors[i]
       }
     });
-    drawAudio('assets/audio.mp3', 500, 4000);
+    drawAudio('assets/audio.mp3', 1000, 8000);
     drawText();
   });
 
@@ -71,7 +71,7 @@ function playScript(second) {
     currentSecond = second;
   }
 
-  const totalDuration = 45;
+  const totalDuration = audio.duration;
   const text = script.find(s => s.start <= second && s.end >= second);
   if(!text) return;
   const textProgress = (second - text.start) / (text.end - text.start) * 100;
@@ -111,7 +111,7 @@ function drawText() {
     const personTag = document.createElement('div')
     personTag.classList.add('person-tag');
     if(script.slice(0, i).find(p => p.speaker === paragraph.speaker)) {
-      personTag.innerText = paragraph.speaker.split(" ").map((n)=>n[0]).join(".");;
+      personTag.innerText = paragraph.speaker.split(" ").map((n)=>n[0] + n[1]).join(". ");;
     } else {
       personTag.innerText = paragraph.speaker;
     }
@@ -143,7 +143,6 @@ function drawText() {
 function drawTextProgress(percentage, scriptIndex) {
   const textBox = document.querySelector(`.section-${scriptIndex} .text .wrapper`);
   const textDimensions = textBox.getBoundingClientRect();
-  const lines = textBox.height / 33;
   const children = Array.from(textBox.children);
   const spans = children.filter(child => child.tagName === 'SPAN');
   const totalWords = spans.length;
@@ -167,12 +166,21 @@ function drawTextProgress(percentage, scriptIndex) {
   });
 
   const wordIndex = Math.floor(totalWords * (percentage / 100));
-  const textContainerTop = content.getBoundingClientRect().height - text.getBoundingClientRect().height;
-  const paddingTop = Array.from(text.children)
-    .slice(0, scriptIndex - 1)
-    .reduce((acc, curr) => acc + curr.getBoundingClientRect().height, 0);
+  const textContainerTop = document.querySelector('#content > .wrapper').getBoundingClientRect().height - text.getBoundingClientRect().height;
+  const arr = Array.from(text.children);
+  const paddingTop = arr
+    .slice(0, scriptIndex + 1)
+    .reduce((acc, curr, i) => {
+      if(i === arr.length - 1) {
+        return acc = document.querySelector('#content > .wrapper').getBoundingClientRect().height;
+      } else if(i === 0) {
+        return acc = - 120;
+      } else {
+        return acc + curr.getBoundingClientRect().height + 16
+      }
+    }, 0);
 
-  content.scrollTop = textContainerTop + paddingTop + 100;
+  content.scrollTop = textContainerTop + paddingTop - 32;
 
   wordsPerLine.forEach((line, i) => {
     const sentence = document.querySelector(`.sentence-${i}-${scriptIndex}`);
@@ -186,7 +194,7 @@ function drawTextProgress(percentage, scriptIndex) {
       setHighlighting(sentence, textDimensions.width);
     } else if(wordIndex < line.length + wordsBefore && wordIndex > wordsBefore) {
       const index = wordIndex - wordsBefore;
-      const width = line[index].getBoundingClientRect().left - textDimensions.left;
+      const width = line[index].getBoundingClientRect().right - textDimensions.left;
       setHighlighting(sentence, width);
     } else {
       setHighlighting(sentence, 0);
@@ -198,13 +206,4 @@ function setHighlighting(el, width) {
   el.style.backgroundColor = 'yellow';
   el.style.opacity = 0.3;
   el.style.width = `${width}px`;
-}
-
-function resetHighlighting() {
-  for(let i = 0; i < 21; i++) {
-    const el = document.querySelector(`.sentence-${i}`);
-    if(el) {
-      el.style.width = 0;
-    }
-  }
 }

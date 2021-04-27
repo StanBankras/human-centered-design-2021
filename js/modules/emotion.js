@@ -21,19 +21,24 @@ export let emotionConfiguration = {
     emote: '🤬',
     active: true
   },
+  lachen: {
+    color: 'black',
+    emote: '😂',
+    active: true
+  },
   geirriteerd: {
     color: 'black',
     emote: '😤',
     active: true
   },
-  verbaasd: {
-    color: 'black',
-    emote: '😯',
-    active: true
-  },
   geschokt: {
     color: 'black',
     emote: '😲',
+    active: true
+  },
+  verbaasd: {
+    color: 'black',
+    emote: '😯',
     active: true
   }
 }
